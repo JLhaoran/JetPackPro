@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <Button
+       android:id="@+id/btn_lifecycle"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="lifecycle"
+       android:layout_gravity="center"
+       />
+
+    <Button
+        android:id="@+id/btn_livedata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LiveData"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_viewmode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ViewMode"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigation"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Room"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_workmanager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WorkManager"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>

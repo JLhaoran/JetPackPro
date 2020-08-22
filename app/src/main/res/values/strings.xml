@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">JetPack</string>
+    <string name="title_activity_lifecycle">LifecycleActivity</string>
+    <string name="title_activity_live_data">LiveDataActivity</string>
+    <string name="title_activity_room">RoomActivity</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+</resources>

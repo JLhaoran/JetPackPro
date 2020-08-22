@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_400"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/horizonItemImage_base"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:id="@+id/rl_base"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvname_base"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="买买提巴旦木"
+                android:maxLines="1"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_20"/>
+
+            <TextView
+                android:id="@+id/tv_summary"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:paddingTop="@dimen/dp_2"
+                android:maxLines="3"
+                android:text="介绍"
+                android:textColor="#808080"
+                android:textSize="@dimen/sp_13" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom">
+
+                <TextView
+                    android:id="@+id/tvname_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥ 30"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_FB4E44"
+                    android:textSize="@dimen/sp_22" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/img_price_subtract"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/tv_num_value"
+                        android:layout_toRightOf="@id/tvname_price"
+                        android:background="@mipmap/service_quantity_selector_subtract"
+                        android:visibility="invisible"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_num_value"
+                        android:layout_width="40dp"
+                        android:layout_height="25dp"
+                        android:layout_toRightOf="@id/tvname_price"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textSize="@dimen/sp_20"
+                        android:visibility="invisible"
+                        />
+
+                    <TextView
+                        android:id="@+id/img_price_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/tv_num_value"
+                        android:background="@mipmap/service_quantity_selector_add" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
