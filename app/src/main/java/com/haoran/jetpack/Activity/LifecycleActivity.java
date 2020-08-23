@@ -88,10 +88,7 @@ public class LifecycleActivity extends AppCompatActivity implements ISearchView,
     private void setView(List<OrderListBean.DataBean> mList){
         if(mArrayList!=null && mArrayList.size()!=0)
         mArrayList.clear();
-        Log.d("lhr",">>>>---setView--000-mList.size="+mList.size());
         mArrayList.addAll(mList);
-        Log.d("lhr",">>>>---setView--001--mArrayList.size="+mArrayList.size());
         mDailyPagerAdapter.notifyDataSetChanged();
-        Log.d("lhr",">>>>---setView---");
     }
 }
