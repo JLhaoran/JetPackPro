@@ -1,5 +1,6 @@
 package com.haoran.jetpack.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,13 +13,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.haoran.jetpack.R;
 import com.haoran.jetpack.livedata.LiveDataBus;
+import com.haoran.jetpack.livedata.LiveDataBusActivity;
+import com.haoran.jetpack.livedata.LiveDataBusX;
 import com.haoran.jetpack.livedata.NameViewModel;
 
 public class LiveDataActivity extends AppCompatActivity {
 
     private NameViewModel model;
     private TextView nameTextView;
-    private Button btn;
+    private Button btn,btnTest;
     private int i=0;
 
     @Override
@@ -28,6 +31,7 @@ public class LiveDataActivity extends AppCompatActivity {
 
         nameTextView=findViewById(R.id.tvText);
         btn=findViewById(R.id.btn);
+        btnTest=findViewById(R.id.btn_test);
 
         model= ViewModelProviders.of(this).get(NameViewModel.class);
 
@@ -52,13 +56,13 @@ public class LiveDataActivity extends AppCompatActivity {
 //        model.getCurrentName().observe(this,observer);
 
         //方案1 直接使用LiveData
-//        btn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                String anotherName="lhr"+(i++);
-//                model.getCurrentName().setValue(anotherName);
-//            }
-//        });
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String anotherName="lhr"+(i++);
+                model.getCurrentName().setValue(anotherName);
+            }
+        });
 
         //方案2 使用事件总线
         btn.setOnClickListener(new View.OnClickListener(){
@@ -86,6 +90,36 @@ public class LiveDataActivity extends AppCompatActivity {
                     }
                 }.start();
 
+
+            }
+        });
+
+
+        btnTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(LiveDataActivity.this, LiveDataBusActivity.class);
+                startActivity(intent);
+
+
+                new Thread(){
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < 10; i++) {
+                            String anotherName="子线程 lhr"+(i++);
+                            //发送消息
+                            LiveDataBusX.getInstance().with("data",String.class).postValue(anotherName);
+                            try {
+                                Thread.sleep(5000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+
+                        }
+                    }
+                }.start();
 
             }
         });
