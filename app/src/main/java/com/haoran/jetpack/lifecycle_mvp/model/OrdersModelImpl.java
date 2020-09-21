@@ -1,5 +1,7 @@
 package com.haoran.jetpack.lifecycle_mvp.model;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,9 +37,11 @@ public class OrdersModelImpl implements OrdersModel {
             public void onResponse(Call<OrderListBean> call, Response<OrderListBean> response) {
                 try {
                     String message = response.body().getMessage();
+                    Log.d("rrcc",">>>>>-message---="+message);
                     if (null != message && message.equals("OK")) {
                         mFruitList.clear();
                         mFruitList.addAll(response.body().getData());
+                        Log.d("rrcc",">>>>>-OK--onFailure----mFruitList="+mFruitList.size());
                     }
                    } catch (Exception e){
                     e.printStackTrace();
@@ -48,6 +52,7 @@ public class OrdersModelImpl implements OrdersModel {
             @Override
             public void onFailure(Call<OrderListBean> call, Throwable t) {
                 t.printStackTrace();
+                Log.d("rrcc",">>>>>---onFailure----");
             }
         });
         return mFruitList;

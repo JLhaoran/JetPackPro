@@ -12,8 +12,6 @@ import com.haoran.jetpack.Activity.NavigationActivity;
 import com.haoran.jetpack.Activity.RoomActivity;
 import com.haoran.jetpack.Activity.ViewModelActivity;
 import com.haoran.jetpack.Activity.WorkManagerActivity;
-
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Intent mIntent = null;
