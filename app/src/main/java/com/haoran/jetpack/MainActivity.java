@@ -9,9 +9,12 @@ import android.widget.Button;
 import com.haoran.jetpack.Activity.LifecycleActivity;
 import com.haoran.jetpack.Activity.LiveDataActivity;
 import com.haoran.jetpack.Activity.NavigationActivity;
+import com.haoran.jetpack.Activity.PagingMainActivity;
 import com.haoran.jetpack.Activity.RoomActivity;
 import com.haoran.jetpack.Activity.ViewModelActivity;
 import com.haoran.jetpack.Activity.WorkManagerActivity;
+import com.haoran.jetpack.paging.positional.PagingActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Intent mIntent = null;
@@ -26,12 +29,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnNavigation = findViewById(R.id.btn_navigation);
         Button btnRoom = findViewById(R.id.btn_room);
         Button btnWorkManager = findViewById(R.id.btn_workmanager);
+        Button btnPaging= findViewById(R.id.btn_paging);
 
         btnLifecycle.setOnClickListener(this);
         btnLiveData.setOnClickListener(this);
         btnNavigation.setOnClickListener(this);
         btnRoom.setOnClickListener(this);
         btnWorkManager.setOnClickListener(this);
+        btnPaging.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                mIntent.setClass(MainActivity.this, WorkManagerActivity.class);
                System.out.println(">>>>>workmanager>>>>>");
                break;
+            case R.id.btn_paging:
+                mIntent.setClass(MainActivity.this, PagingMainActivity.class);
+                System.out.println(">>>>>PagingActivity>>>>>");
+                break;
        }
        startActivity(mIntent);
 

@@ -7,52 +7,31 @@
     android:layout_gravity="center_vertical"
     tools:context=".MainActivity">
 
-   <Button
-       android:id="@+id/btn_lifecycle"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="lifecycle"
-       />
-
     <Button
-        android:id="@+id/btn_livedata"
+        android:id="@+id/btn_paging_positional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LiveData"
+        android:text="positional"
         />
 
     <Button
-        android:id="@+id/btn_viewmode"
+        android:id="@+id/btn_itemkeyed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ViewMode"
+        android:text="itemkeyed"
         />
 
     <Button
-        android:id="@+id/btn_navigation"
+        android:id="@+id/btn_pagekeyed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Navigation"
+        android:text="pagekeyed"
         />
 
     <Button
-        android:id="@+id/btn_room"
+        android:id="@+id/btn_room_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Room"
+        android:text="room data"
         />
-
-    <Button
-        android:id="@+id/btn_workmanager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WorkManager"
-        />
- <Button
-     android:id="@+id/btn_paging"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:text="Paging"
-     />
-
 </LinearLayout>
